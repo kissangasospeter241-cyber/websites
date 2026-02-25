@@ -1,1 +1,5 @@
-# websites
+FULL NAME: SOSPETER THADEI SWAY
+REGISTRATION NUMBER: 24100123010101
+CA/DIST/25/4731
+
+WEBSITE LINK:   https://699f39b8f367a22fb6db1ab9--fabulous-hamster-c7b15d.netlify.app/
