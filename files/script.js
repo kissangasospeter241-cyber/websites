@@ -1,10 +1,8 @@
-/*
-Student management logic using an array of objects stored in memory.
-*/
+
 
 const students = [];
 
-// Helpers
+
 function findStudentIndexById(id) {
     return students.findIndex(s => s.id === id);
 }
@@ -22,7 +20,7 @@ function calculateAverage(performance) {
     return (totals.math + totals.english + totals.science + totals.social) / count;
 }
 
-// DOM elements
+
 const studentForm = document.getElementById('studentForm');
 const studentTableBody = document.querySelector('#studentTable tbody');
 const searchInput = document.getElementById('searchInput');
@@ -31,7 +29,7 @@ const performanceForm = document.getElementById('performanceForm');
 const detailsSection = document.getElementById('detailsSection');
 const detailsContent = document.getElementById('detailsContent');
 
-// Event listeners
+
 studentForm.addEventListener('submit', handleStudentSubmit);
 searchInput.addEventListener('input', renderStudentList);
 performanceForm.addEventListener('submit', handlePerformanceSubmit);
@@ -184,3 +182,4 @@ function handlePerformanceSubmit(e) {
 
 // initialize
 renderStudentList();
+
