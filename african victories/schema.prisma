@@ -1,0 +1,76 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Destination {
+  id        Int     @id @default(autoincrement())
+  name      String
+  slug      String  @unique
+  country   String
+  trips     Trip[]
+}
+
+model Operator {
+  id    Int    @id @default(autoincrement())
+  name  String
+  email String?
+  phone String?
+  trips Trip[]
+}
+
+model Activity {
+  id     Int    @id @default(autoincrement())
+  name   String
+  detail String?
+  trip   Trip   @relation(fields: [tripId], references: [id])
+  tripId Int
+}
+
+model Trip {
+  id          Int         @id @default(autoincrement())
+  title       String
+  slug        String      @unique
+  summary     String
+  description String
+  price       Float
+  duration    Int         // days
+  difficulty  String?
+  startDate   DateTime?
+  destination Destination? @relation(fields: [destinationId], references: [id])
+  destinationId Int?
+  operator    Operator?   @relation(fields: [operatorId], references: [id])
+  operatorId  Int?
+  activities  Activity[]
+  images      TripImage[]
+  createdAt   DateTime    @default(now())
+  updatedAt   DateTime    @updatedAt
+}
+
+model Booking {
+  id        Int      @id @default(autoincrement())
+  trip      Trip     @relation(fields: [tripId], references: [id])
+  tripId    Int
+  name      String
+  email     String
+  phone     String?
+  seats     Int      @default(1)
+  message   String?
+  status    String   @default("pending")
+  createdAt DateTime @default(now())
+}
+
+model TripImage {
+  id     Int   @id @default(autoincrement())
+  trip   Trip  @relation(fields: [tripId], references: [id])
+  tripId Int
+  url    String
+  alt    String?
+  order  Int   @default(0)
+  publicId String?
+  provider String? @default("local")
+}

@@ -1,0 +1,57 @@
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@600;700&family=Source+Sans+3:wght@400;600;700&display=swap');
+
+/*@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --brand-50: #f5f8f2;
+  --brand-100: #e6eedf;
+  --brand-600: #486b3a;
+  --brand-700: #39562f;
+  --sand: #c69c6d;
+  --ink: #1f2937;
+  --font-heading: 'Merriweather', Georgia, serif;
+  --font-body: 'Source Sans 3', 'Segoe UI', Tahoma, sans-serif;
+}
+
+html,
+body,
+#__next {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  color: var(--ink);
+  font-family: var(--font-body);
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: var(--font-heading);
+}
+
+*:focus {
+  outline: none;
+}
+
+*:focus-visible {
+  outline: 3px solid rgba(72, 107, 58, 0.45);
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+a {
+  color: #0b5fff;
+}
